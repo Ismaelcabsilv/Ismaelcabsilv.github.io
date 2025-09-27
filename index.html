@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nürburgring - El Circuito Legendario</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #1a1a1a;
+            color: #fff;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1591136500915-028c70a7b68c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .logo span {
+            color: #ff0000;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #ff0000;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-decoration: none;
+        }
+        
+        .btn:hover {
+            background: #cc0000;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #ff0000;
+        }
+        
+        .history {
+            background-color: #2a2a2a;
+            padding: 60px 0;
+        }
+        
+        .history-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .history-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .history-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .history-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .circuits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .circuit-card {
+            background: #2a2a2a;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
+        }
+        
+        .circuit-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .circuit-image {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .circuit-info {
+            padding: 20px;
+        }
+        
+        .circuit-info h3 {
+            color: #ff0000;
+            margin-bottom: 10px;
+        }
+        
+        .records {
+            background-color: #2a2a2a;
+            padding: 60px 0;
+        }
+        
+        .record-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .record-item {
+            background: #1a1a1a;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-left: 5px solid #ff0000;
+            border-radius: 5px;
+        }
+        
+        .record-driver {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #ff0000;
+        }
+        
+        .record-time {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        footer {
+            background: #000;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .social-icons {
+            margin: 20px 0;
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            color: white;
+            background: #333;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 50%;
+            margin: 0 10px;
+            transition: background 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background: #ff0000;
+        }
+        
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .history-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="logo">NÜRBURG<span>RING</span></h1>
+        <p class="subtitle">El circuito más desafiante y legendario del mundo automovilístico</p>
+        <a href="#historia" class="btn">Descubre su Historia</a>
+    </header>
+    
+    <section class="history" id="historia">
+        <div class="container">
+            <h2 class="section-title">Historia del Nürburgring</h2>
+            <div class="history-content">
+                <div class="history-text">
+                    <p>El Nürburgring es un circuito de carreras ubicado en la región de Eifel, Alemania. Construido en la década de 1920, fue inaugurado el 18 de junio de 1927 como una instalación para pruebas y carreras de automóviles.</p>
+                    <p>El circuito original, conocido como Nordschleife ("Circuito Norte"), tenía una longitud de 22.8 km y era considerado el recorrido más exigente y peligroso del mundo.</p>
+                    <p>Durante su historia, ha albergado el Gran Premio de Alemania de Fórmula 1 en múltiples ocasiones y es famoso por ser el circuito de pruebas preferido por los fabricantes de automóviles para desarrollar sus vehículos de alto rendimiento.</p>
+                </div>
+                <div class="history-image">
+                    <img src="/brecht-denil-w-K9Ni_cIoo-unsplash.jpg" alt="Vista aérea del Nürburgring">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="container">
+        <h2 class="section-title">Circuitos del Nürburgring</h2>
+        <div class="circuits">
+            <div class="circuit-card">
+                <img src="/OIP (5).webp" alt="Nordschleife" class="circuit-image">
+                <div class="circuit-info">
+                    <h3>Nordschleife</h3>
+                    <p>El legendario "Anillo Norte" de 20.8 km con más de 150 curvas. Conocido como "El Infierno Verde" por su dificultad y peligrosidad.</p>
+                </div>
+            </div>
+            
+            <div class="circuit-card">
+                <img src="/Nuerburgring-595569813df78cdc290e4a57.jpg" alt="GP-Strecke" class="circuit-image">
+                <div class="circuit-info">
+                    <h3>GP-Strecke</h3>
+                    <p>El circuito moderno de 5.1 km utilizado para competiciones internacionales como el Gran Premio de Alemania de Fórmula 1.</p>
+                </div>
+            </div>
+            
+            <div class="circuit-card">
+                <img src="/OIP (6).webp" alt="Südschleife" class="circuit-image">
+                <div class="circuit-info">
+                    <h3>Südschleife</h3>
+                    <p>El "Anillo Sur" original de 7.7 km, ahora en desuso pero que formaba parte del circuito completo original.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="records">
+        <div class="container">
+            <h2 class="section-title">Récords de Vuelta</h2>
+            <div class="record-list">
+                <div class="record-item">
+                    <div class="record-driver">Porsche 919 Hybrid Evo (Timothy Bernhard)</div>
+                    <div class="record-time">5:19.55</div>
+                    <div class="record-details">Récord absoluto del Nordschleife - 2018</div>
+                </div>
+                
+                <div class="record-item">
+                    <div class="record-driver">Mercedes-AMG One (Maro Engel)</div>
+                    <div class="record-time">6:35.183</div>
+                    <div class="record-details">Récord para coches de producción - 2023</div>
+                </div>
+                
+                <div class="record-item">
+                    <div class="record-driver">Volkswagen ID.R (Romain Dumas)</div>
+                    <div class="record-time">6:05.336</div>
+                    <div class="record-details">Récord para vehículos eléctricos - 2019</div>
+                </div>
+                
+                <div class="record-item">
+                    <div class="record-driver">McLaren F1 (Derek Bell)</div>
+                    <div class="record-time">7:11.0</div>
+                    <div class="record-details">Primer coche de producción en bajar de 7:15 - 1993</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-content">
+            <h2>NÜRBURG<span style="color: #ff0000;">RING</span></h2>
+            <p>El circuito más desafiante del mundo</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p>&copy; 2023 Nürburgring - Sitio informativo. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
